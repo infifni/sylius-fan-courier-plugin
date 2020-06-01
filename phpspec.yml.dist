@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Infifni\SyliusFanCarrierPlugin
+        psr4_prefix: Infifni\SyliusFanCarrierPlugin

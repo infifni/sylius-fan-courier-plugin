@@ -1,0 +1,9 @@
+infifni_sylius_urgent_cargus_carrier_shop:
+    resource: "@InfifniSyliusFanCourierPlugin/Resources/config/shop_routing.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+
+infifni_sylius_urgent_cargus_carrier_admin:
+    resource: "@InfifniSyliusFanCourierPlugin/Resources/config/admin_routing.yml"
+    prefix: /admin

@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.yes">
+                <source>infifni.sylius_fan_courier_plugin.ui.yes</source>
+                <target>Da</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.no">
+                <source>infifni.sylius_fan_courier_plugin.ui.no</source>
+                <target>Nu</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.recipient">
+                <source>infifni.sylius_fan_courier_plugin.ui.recipient</source>
+                <target>Destinatar</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.sender">
+                <source>infifni.sylius_fan_courier_plugin.ui.sender</source>
+                <target>Expeditor</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fan_client_id.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.fan_client_id.field_name</source>
+                <target>ID client</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fan_client_id.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.fan_client_id.field_help</source>
+                <target>Acesta este disponibil în partea stângă după logarea în aplicatia SelfAWB.ro.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fan_username.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.fan_username.field_name</source>
+                <target>Cont utilizator</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fan_username.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.fan_username.field_help</source>
+                <target>Contul de utilizator folosit în aplicația selfAWB.ro.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fan_password.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.fan_password.field_name</source>
+                <target>Parola</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fan_password.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.fan_password.field_help</source>
+                <target>Parola contului de utilizator folosită în aplicația selfAWB.ro.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_name</source>
+                <target>Colete sau plicuri ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_help</source>
+                <target>Selectați 'Colete' dacă expediați colete și 'Plicuri' daca expediați plicuri.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_options.parcels">
+                <source>infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_options.parcels</source>
+                <target>Colete</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_options.envelopes">
+                <source>infifni.sylius_fan_courier_plugin.ui.parcels_or_envelopes.field_options.envelopes</source>
+                <target>Plicuri</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.number_of_packages.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.number_of_packages.field_name</source>
+                <target>Număr pachete / AWB</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.number_of_packages.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.number_of_packages.field_help</source>
+                <target>Introduceți un număr întreg. Exemplu: 2 - dacă expediați 2 pachete / AWB (implicit se consideră 1 pachet).</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.who_pays_awb.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.who_pays_awb.field_name</source>
+                <target>Cine plătește AWB ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.who_pays_awb.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.who_pays_awb.field_help</source>
+                <target>Dacă se selectează 'Destinatar' atunci tariful afișat va fi cel de listă și nu cel negociat conform contractului.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.no_vat.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.no_vat.field_name</source>
+                <target>Afișează fără TVA ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.no_vat.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.no_vat.field_help</source>
+                <target>Selectați 'Da' pentru a nu include taxa TVA in prețul transportului.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.hide_shipping_cost.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.hide_shipping_cost.field_name</source>
+                <target>Ascunde taxă de transport ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.hide_shipping_cost.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.hide_shipping_cost.field_help</source>
+                <target>Dacă se selectează 'Da' atunci se va afișa întotdeauna zero la cost transport.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.free_shipping_min_value.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.free_shipping_min_value.field_name</source>
+                <target>Suma minimă pentru transport gratuit</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.free_shipping_min_value.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.free_shipping_min_value.field_help</source>
+                <target>Introduceîi o valoare numerică pozitivă (întreagă sau cu exact două zecimale) pentru a afișa taxa transportului 0 LEI daca suma costurilor produselor comandate este cel puțin egală cu valoarea introdusă.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fixed_cost.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.fixed_cost.field_name</source>
+                <target>Cost fix per transport</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.fixed_cost.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.fixed_cost.field_help</source>
+                <target>Introduceți o valoare numerică pozitivă pentru a o seta ca și taxă de transport.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_name</source>
+                <target>Serviciul activ</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_help</source>
+                <target>Selectați serviciul prin care doriți să se efectueze expediția. Detalii servicii la https://www.fancourier.ro/ro/servicii.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.standard">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.standard</source>
+                <target>Standard</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.collector_account</source>
+                <target>Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.red_code">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.red_code</source>
+                <target>RedCode</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.specifications">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.specifications</source>
+                <target>Caiet Sarcini</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_one_hour">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_one_hour</source>
+                <target>Express Loco 1H</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_two_hours">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_two_hours</source>
+                <target>Express Loco 2H</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_four_hours">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_four_hours</source>
+                <target>Express Loco 4H</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_six_hours">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_six_hours</source>
+                <target>Express Loco 6H</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_one_hour_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_one_hour_collector_account</source>
+                <target>Express Loco 1H-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_two_hours_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_two_hours_collector_account</source>
+                <target>Express Loco 2H-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_four_hours_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_four_hours_collector_account</source>
+                <target>Express Loco 4H-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_six_hours_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.express_loco_six_hours_collector_account</source>
+                <target>Express Loco 6H-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.red_code_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.red_code_collector_account</source>
+                <target>Red code-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods</source>
+                <target>Produse Albe</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods_collector_account</source>
+                <target>Produse Albe-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.freight_transport">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.freight_transport</source>
+                <target>Transport Marfă</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.freight_transport_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.freight_transport_collector_account</source>
+                <target>Transport Marfă-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods_freight_transport">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods_freight_transport</source>
+                <target>Transport Marfă Produse Albe</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods_freight_transport_collector_account">
+                <source>infifni.sylius_fan_courier_plugin.ui.active_service.field_options.white_goods_freight_transport_collector_account</source>
+                <target>Transport Marfă Produse Albe-Cont Colector</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.with_repayment.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.with_repayment.field_name</source>
+                <target>Solicit ramburs valoare marfă ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.with_repayment.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.with_repayment.field_help</source>
+                <target>Selectați 'Da' pentru a solicita ramburs valoarea totală a produselor incluse in comandă.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.add_shipping_cost_to_repayment.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.add_shipping_cost_to_repayment.field_name</source>
+                <target>Adaug cost transport la ramburs ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.add_shipping_cost_to_repayment.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.add_shipping_cost_to_repayment.field_help</source>
+                <target>Selectați 'Da' pentru a include în suma de rambursat (tiparită pe AWB la ramburs) si valoarea transportului (este necesara setarea: Cine plătește AWB ? – Expeditor; tariful aplicat va fi cel negociat în contract).</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.who_pays_repayment.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.who_pays_repayment.field_name</source>
+                <target>Cine plătește efectuarea rambursului ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.who_pays_repayment.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.who_pays_repayment.field_help</source>
+                <target>Selectați 'Destinatar' pentru plata expeditței de ramburs la destinație (valabil numai pentru expedițiile non - Cont Colector la care se solicită ramburs).</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.with_assurance.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.with_assurance.field_name</source>
+                <target>Solicit asigurare de transport ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.with_assurance.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.with_assurance.field_help</source>
+                <target>Selectați 'Da' pentru asigurarea expedițiilor în cazul deteriorării cf. termenilor și condițiilor de curierat. Valoarea declarată va fi egală cu valoarea totală + taxe (ex: TVA) a produselor incluse in comandă.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_name</source>
+                <target>Includ cod produse la conținut ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_help</source>
+                <target>Selectați 'Da' pentru tipărirea la Conținut pe AWB a codurilor produselor incluse în comandă.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.observations.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.observations.field_name</source>
+                <target>Observații</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.observations.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.observations.field_help</source>
+                <target>Introduceți mesajul pe care doriți să-l imprimați pe AWB la rubrica Observații.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.sender_contact_person.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.sender_contact_person.field_name</source>
+                <target>Persoana de contact expeditor</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.sender_contact_person.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.sender_contact_person.field_help</source>
+                <target>(max.  30  de  caractere):  este  optională  (se  poate completa numele persoanei de contact al expeditorului sau orice alta informație suplimentară).</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.open_allowed.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.open_allowed.field_name</source>
+                <target>Se permite deschiderea la livrare ?</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.open_allowed.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.open_allowed.field_help</source>
+                <target>Se selectează 'Da' dacă se optează pentru serviciul “Deschidere la livrare” (acest  serviciu  este  accesibil  si  taxabil  doar  la  expeditor - va  fi  necesară  configurația:  Cine plătește AWB – Expeditor).</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.epod.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.epod.field_name</source>
+                <target>ePOD</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.epod.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.epod.field_help</source>
+                <target>Se selectează 'Da' daca se optează pentru serviciul 'ePOD' pentru printarea AWB-urilor în A6.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.wrong_shipping_cost">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.wrong_shipping_cost</source>
+                <target>Costul de transport afișat este greșit din cauza unei erori de sistem. Vă rugăm continuați comanda, se va regla manual de către un operator ulterior !</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.wrong_city_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.wrong_city_name</source>
+                <target>Orașul introdus nu este recunoscut în sistem, costul de transport afișat nu este real. Situația se va regla manual de către un operator ulterior !</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
