@@ -45,7 +45,14 @@ shipping gateway at point 4.
     ```bash
     composer require infifni/sylius-fan-courier-plugin
     ```
-   2.2. 
+   2.2. Add plugin dependencies to your `config/bundles.php` file:
+    ```php
+    // config/bundles.php
+    return [
+        // other lines
+        new Infifni\SyliusFanCourierPlugin\InfifniSyliusFanCourierPlugin(),
+    ];
+    ```
 3. Define a shipping method at /admin/shipping-methods/new.
     - name it FAN Courier and whatever pleases you
     - the only mandatory thing here is to select for Calculator the FAN calculator, it will be used for cost estimation
