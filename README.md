@@ -117,8 +117,7 @@ are the queries you need to execute to have them:
 
 | Pitfall                  | Why                                   | Exception thrown                     | What user sees                       |
 |--------------------------|---------------------------------------|--------------------------------------|--------------------------------------|
-| Incorrect province name  | - provinces are not inserted as specified above | \Infifni\SyliusFanCourierPlugin\Exception\WrongProvinceNameException | Costul de transport afișat este greșit din cauza unei erori de sistem. Vă rugăm continuați comanda, se va regla manual de către un operator ulterior ! |
-|                          | - plugin is used for geographical areas outside of Romania |                                                              |                                                                                                                                                        |  
+| Incorrect province name  | - provinces are not inserted as specified above or plugin is used for geographical areas outside of Romania | \Infifni\SyliusFanCourierPlugin\Exception\WrongProvinceNameException | Costul de transport afișat este greșit din cauza unei erori de sistem. Vă rugăm continuați comanda, se va regla manual de către un operator ulterior ! |
 | Incorrect city name      | - city does not exist in FAN's database; diacritics are removed by the plugin if any; all uppercase letters are converted to lowercase and spaces are trimmed before doing the FAN request | \Infifni\SyliusFanCourierPlugin\Exception\WrongCityNameException | Orașul introdus nu este recunoscut în sistem, costul de transport afișat nu este real. Situația se va regla manual de către un operator ulterior ! |
 
 What to do ?
