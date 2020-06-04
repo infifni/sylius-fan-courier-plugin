@@ -92,9 +92,9 @@ class RequestFormatter
      */
     public function setProvince(): self
     {
-        $this->province = $this->provinceRepository->findOneByCode(
-            $this->shipment->getOrder()->getShippingAddress()->getProvinceCode()
-        );
+        $this->province = $this->provinceRepository->findOneBy([
+            'code' => $this->shipment->getOrder()->getShippingAddress()->getProvinceCode()
+        ]);
 
         return $this;
     }
@@ -102,14 +102,23 @@ class RequestFormatter
     public function getProvinceCleanName(): string
     {
         if (null === $this->provinceCleanName) {
-            $this->provinceCleanName = str_replace(
-                ['ș', 'ț', 'î', 'ă', 'â'],
-                ['s', 't', 'i', 'a', 'a'],
-                $this->province->getName()
-            );
+            $this->provinceCleanName = $this->stripDiacritics($this->province->getName());
         }
 
         return $this->provinceCleanName;
+    }
+
+    /**
+     * @param string $string
+     * @return string|string[]
+     */
+    private function stripDiacritics(string $string)
+    {
+        return str_replace(
+            ['ș', 'ț', 'î', 'ă', 'â'],
+            ['s', 't', 'i', 'a', 'a'],
+            $string
+        );
     }
 
     /**
@@ -150,7 +159,7 @@ class RequestFormatter
         $length = $this->shipment->getShippingVolume() ** (1/3);
         $params = [
             'serviciu' => $this->shippingGatewayConfig['active_service'],
-            'localitate_dest' => $address->getCity(),
+            'localitate_dest' => $this->stripDiacritics($address->getCity()),
             'judet_dest' => $this->getProvinceCleanName(),
             'greutate' => $this->shipment->getShippingWeight(),
             'lungime' => $length,
