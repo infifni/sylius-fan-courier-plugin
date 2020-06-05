@@ -270,6 +270,10 @@
                 <source>infifni.sylius_fan_courier_plugin.ui.errors.wrong_city_name</source>
                 <target>Orașul introdus nu este recunoscut în sistem, costul de transport afișat nu este real. Situația se va regla manual de către un operator ulterior !</target>
             </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.ignore_this_option">
+                <source>infifni.sylius_fan_courier_plugin.ui.ignore_this_option</source>
+                <target>Ignoră această opțiune, a fost obligatoriu să fie adăugată cel puțin una.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

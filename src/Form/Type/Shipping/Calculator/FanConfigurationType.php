@@ -26,7 +26,8 @@ final class FanConfigurationType extends AbstractType
     {
         $builder
             ->add('fake_option', TextType::class, [
-                'label' => 'Ignore this option, it was mandatory to have at least one field'
+                'label' => 'infifni.sylius_fan_courier_plugin.ui.ignore_this_option',
+                'required' => false
             ]);
     }
 
