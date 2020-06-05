@@ -120,8 +120,12 @@ class CostProvider
             if ($order && $order->getTotal() / 100 >= $this->shippingGatewayConfig['free_shipping_min_value']) {
                 $cost = 0;
             } elseif ($this->shippingGatewayConfig['fixed_cost']) {
-                $cost = (int) $this->shippingGatewayConfig['fixed_cost'] * 100;
+                $cost = $this->shippingGatewayConfig['fixed_cost'];
             }
+        }
+
+        if (null !== $cost) {
+            $cost = $this->getVatCost((float) $cost);
         }
 
         return $cost;
@@ -146,7 +150,7 @@ class CostProvider
                 throw new CostEstimationNotNumericException($response);
             }
 
-            return (float) $response * 100;
+            return (int) ($this->getVatCost((float) $response) * 100);
         } catch (Exception $e) {
             $this->logger->error(
                 "Shipping estimation failed for shipment with id {$shipment->getId()}: {$e->getMessage()}"
@@ -161,5 +165,18 @@ class CostProvider
 
             return 0;
         }
+    }
+
+    /**
+     * @param float $cost
+     * @return float
+     */
+    private function getVatCost(float $cost): float
+    {
+        if (! $this->shippingGatewayConfig['no_vat']) {
+            $cost = $cost + 19 / 100 * $cost;
+        }
+
+        return $cost;
     }
 }
