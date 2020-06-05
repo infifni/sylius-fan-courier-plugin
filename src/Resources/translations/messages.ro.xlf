@@ -222,12 +222,12 @@
                 <source>infifni.sylius_fan_courier_plugin.ui.with_assurance.field_help</source>
                 <target>Selectați 'Da' pentru asigurarea expedițiilor în cazul deteriorării cf. termenilor și condițiilor de curierat. Valoarea declarată va fi egală cu valoarea totală + taxe (ex: TVA) a produselor incluse in comandă.</target>
             </trans-unit>
-            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_name">
-                <source>infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_name</source>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.with_product_codes_in_content.field_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.with_product_codes_in_content.field_name</source>
                 <target>Includ cod produse la conținut ?</target>
             </trans-unit>
-            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_help">
-                <source>infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_help</source>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.with_product_codes_in_content.field_help">
+                <source>infifni.sylius_fan_courier_plugin.ui.with_product_codes_in_content.field_help</source>
                 <target>Selectați 'Da' pentru tipărirea la Conținut pe AWB a codurilor produselor incluse în comandă.</target>
             </trans-unit>
             <trans-unit id="infifni.sylius_fan_courier_plugin.ui.observations.field_name">
