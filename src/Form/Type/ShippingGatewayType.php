@@ -14,6 +14,9 @@ namespace Infifni\SyliusFanCourierPlugin\Form\Type;
 
 use Infifni\FanCourierApiClient\Request\EndpointInterface;
 use Infifni\FanCourierApiClient\Request\GenerateAwb;
+use Infifni\SyliusFanCourierPlugin\Shipping\GatewayConfigProvider;
+use Psr\Cache\InvalidArgumentException;
+use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -50,8 +53,25 @@ final class ShippingGatewayType extends AbstractType
         'white_goods_freight_transport_collector_account' => 'white_goods_freight_transport_collector_account',
     ];
 
+    /**
+     * @var AdapterInterface
+     */
+    private $cache;
+
+    public function __construct(AdapterInterface $cache)
+    {
+        $this->cache = $cache;
+    }
+
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     * @throws InvalidArgumentException
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $this->cache->deleteItem(GatewayConfigProvider::GATEWAY_CACHE_KEY);
+
         $builder
             ->add('client_id', TextType::class, [
                 'label' => 'infifni.sylius_fan_courier_plugin.ui.fan_client_id.field_name',
@@ -168,9 +188,9 @@ final class ShippingGatewayType extends AbstractType
                     'infifni.sylius_fan_courier_plugin.ui.yes' => self::BOOL_TRUE
                 ]
             ])
-            ->add('product_codes_in_content', ChoiceType::class, [
-                'label' => 'infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_name',
-                'help' => 'infifni.sylius_fan_courier_plugin.ui.product_codes_in_content.field_help',
+            ->add('with_product_codes_in_content', ChoiceType::class, [
+                'label' => 'infifni.sylius_fan_courier_plugin.ui.with_product_codes_in_content.field_name',
+                'help' => 'infifni.sylius_fan_courier_plugin.ui.with_product_codes_in_content.field_help',
                 'choices' => [
                     'infifni.sylius_fan_courier_plugin.ui.no' => self::BOOL_NO,
                     'infifni.sylius_fan_courier_plugin.ui.yes' => self::BOOL_TRUE

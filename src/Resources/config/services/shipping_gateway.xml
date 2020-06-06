@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="infifni.sylius_fan_courier_plugin.form.type.fan_shipping_gateway" class="Infifni\SyliusFanCourierPlugin\Form\Type\ShippingGatewayType">
+            <argument type="service" id="cache.app"/>
+            <tag name="bitbag.shipping_gateway_configuration_type" type="fan" label="FAN Courier"/>
+            <tag name="form.type" />
+        </service>
+
+        <service id="infifni.sylius_fan_courier_plugin.shipping.gateway_config_provider" class="Infifni\SyliusFanCourierPlugin\Shipping\GatewayConfigProvider">
+            <argument type="service" id="cache.app"/>
+            <argument type="service" id="bitbag.repository.shipping_gateway"/>
+        </service>
+
+    </services>
+</container>

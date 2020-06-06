@@ -19,7 +19,7 @@ use Symfony\Component\Cache\Adapter\AdapterInterface;
 
 class GatewayConfigProvider
 {
-    private const GATEWAY_CACHE_KEY = 'fan_gateway_object';
+    public const GATEWAY_CACHE_KEY = 'fan_gateway_object';
 
     /**
      * @var array [
