@@ -262,12 +262,12 @@
                 <source>infifni.sylius_fan_courier_plugin.ui.epod.field_help</source>
                 <target>Se selectează 'Da' daca se optează pentru serviciul 'ePOD' pentru printarea AWB-urilor în A6.</target>
             </trans-unit>
-            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.wrong_shipping_cost">
-                <source>infifni.sylius_fan_courier_plugin.ui.errors.wrong_shipping_cost</source>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.cost_estimation.wrong_shipping_cost">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.cost_estimation.wrong_shipping_cost</source>
                 <target>Costul de transport afișat este greșit din cauza unei erori de sistem. Vă rugăm continuați comanda, se va regla manual de către un operator ulterior !</target>
             </trans-unit>
-            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.wrong_city_name">
-                <source>infifni.sylius_fan_courier_plugin.ui.errors.wrong_city_name</source>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.cost_estimation.wrong_city_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.cost_estimation.wrong_city_name</source>
                 <target>Orașul introdus nu este recunoscut în sistem, costul de transport afișat nu este real. Situația se va regla manual de către un operator ulterior !</target>
             </trans-unit>
             <trans-unit id="infifni.sylius_fan_courier_plugin.ui.ignore_this_option">

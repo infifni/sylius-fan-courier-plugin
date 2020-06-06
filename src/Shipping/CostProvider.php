@@ -76,7 +76,7 @@ class CostProvider
      * @param string $messageId
      */
     public function addErrorFlash(
-        string $messageId = 'infifni.sylius_fan_courier_plugin.ui.errors.wrong_shipping_cost'
+        string $messageId = 'infifni.sylius_fan_courier_plugin.ui.errors.cost_estimation.wrong_shipping_cost'
     ): void {
         $message = $this->translator->trans($messageId);
 
@@ -160,7 +160,9 @@ class CostProvider
                 $this->addErrorFlash();
             }
             if ($e instanceof WrongCityNameException) {
-                $this->addErrorFlash('infifni.sylius_fan_courier_plugin.ui.errors.wrong_city_name');
+                $this->addErrorFlash(
+                    'infifni.sylius_fan_courier_plugin.ui.errors.cost_estimation.wrong_city_name'
+                );
             }
 
             return 0;
