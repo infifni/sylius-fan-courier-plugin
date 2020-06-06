@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="infifni.sylius_fan_courier_plugin.event_listener.shipping_export" class="Infifni\SyliusFanCourierPlugin\EventListener\ShippingExportEventListener">
+            <argument type="service" id="infifni.sylius_fan_courier_plugin.shipping.awb_generator"/>
+            <tag name="kernel.event_listener" event="bitbag.export_shipment" method="exportShipment"/>
+        </service>
+
+        <service id="infifni.sylius_fan_courier_plugin.shipping.awb_generator" class="Infifni\SyliusFanCourierPlugin\Shipping\AwbGenerator" public="true">
+            <argument type="service" id="infifni.sylius_fan_courier_plugin.request_formatter"/>
+            <argument type="service" id="infifni.sylius_fan_courier_plugin.api.client_intermediate"/>
+            <argument type="service" id="session.flash_bag"/>
+            <argument type="service" id="translator"/>
+            <argument type="service" id="monolog.logger"/>
+        </service>
+
+    </services>
+</container>
