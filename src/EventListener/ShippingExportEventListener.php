@@ -94,8 +94,8 @@ class ShippingExportEventListener
         }
 
         $responseData = $shouldGenerateNewAwb
-            ? json_decode($shippingAwb->getApiResponse(), true, 512, JSON_THROW_ON_ERROR)
-            : $this->awbGenerator->generateAwb($shipment);
+            ? $this->awbGenerator->generateAwb($shipment)
+            : json_decode($shippingAwb->getApiResponse(), true, 512, JSON_THROW_ON_ERROR);
         if ($responseData) {
             if (! $shippingAwb) {
                 $shippingAwb = new ShippingAwb();
