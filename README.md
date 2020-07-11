@@ -37,7 +37,11 @@ shipping gateway at point 4.
     }
     ```
 
-    1.2. Follow installation steps from [https://github.com/infifni/SyliusShippingExportPlugin](https://github.com/infifni/SyliusShippingExportPlugin)
+    1.2. Follow installation steps from [https://github.com/infifni/SyliusShippingExportPlugin](https://github.com/infifni/SyliusShippingExportPlugin) 
+    except the composer require step. That step should be:
+    ```bash
+        composer require bitbag/shipping-export-plugin:dev-master
+    ```
 
 2. Install Sylius FAN Courier plugin.
     
