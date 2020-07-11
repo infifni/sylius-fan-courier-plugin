@@ -173,7 +173,7 @@ class CostProvider
      * @param float $cost
      * @return float
      */
-    private function getVatCost(float $cost): float
+    public function getVatCost(float $cost): float
     {
         if (! $this->shippingGatewayConfig['no_vat']) {
             $cost = $cost + 19 / 100 * $cost;

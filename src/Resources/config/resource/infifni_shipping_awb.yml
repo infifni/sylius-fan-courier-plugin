@@ -1,0 +1,6 @@
+sylius_resource:
+    resources:
+        infifni.shipping_awb:
+            classes:
+                model: Infifni\SyliusFanCourierPlugin\Entity\ShippingAwb
+                repository: Infifni\SyliusFanCourierPlugin\Repository\ShippingAwbRepository

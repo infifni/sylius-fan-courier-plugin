@@ -11,11 +11,13 @@
 namespace Infifni\SyliusFanCourierPlugin\Api;
 
 use Infifni\FanCourierApiClient\Request\City;
+use Infifni\FanCourierApiClient\Request\Price;
 use Infifni\SyliusFanCourierPlugin\Exception\WrongProvinceNameException;
 use Infifni\SyliusFanCourierPlugin\Shipping\GatewayConfigProvider;
 use Psr\Cache\InvalidArgumentException;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 use Sylius\Component\Addressing\Model\Province;
+use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\Shipment;
 use Sylius\Component\Shipping\Model\ShipmentInterface;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
@@ -23,6 +25,8 @@ use Symfony\Component\Cache\Adapter\AdapterInterface;
 class RequestFormatter
 {
     private const CITY_DATA_BASE_KEY = 'infifni_sylius_fan_courier_plugin_city_data_key_';
+    private const PRICE_ESTIMATION = 'price_estimation';
+    private const AWB_GENERATOR = 'awb_generator';
 
     /**
      * @var array
@@ -102,7 +106,7 @@ class RequestFormatter
     public function getProvinceCleanName(): string
     {
         if (null === $this->provinceCleanName) {
-            $this->provinceCleanName = $this->stripDiacritics($this->province->getName());
+            $this->provinceCleanName = $this->cleanString($this->province->getName());
         }
 
         return $this->provinceCleanName;
@@ -112,13 +116,13 @@ class RequestFormatter
      * @param string $string
      * @return string|string[]
      */
-    private function stripDiacritics(string $string)
+    public function cleanString(string $string)
     {
-        return str_replace(
-            ['ș', 'ț', 'î', 'ă', 'â'],
-            ['s', 't', 'i', 'a', 'a'],
-            $string
-        );
+        return ucwords(strtolower(str_replace(
+                ['ș', 'ț', 'î', 'ă', 'â'],
+                ['s', 't', 'i', 'a', 'a'],
+                $string
+        )), ' -');
     }
 
     /**
@@ -155,35 +159,139 @@ class RequestFormatter
         }
 
         $order = $this->shipment->getOrder();
+        $params = [];
+        $this->prepareSimilarParams($order, $params, self::PRICE_ESTIMATION);
+
+        return $params;
+    }
+
+    /**
+     * @throws WrongProvinceNameException
+     */
+    public function getGenerateAwbRequestParams(): array
+    {
+        if (! $this->cities) {
+            throw new WrongProvinceNameException($this->province);
+        }
+
+        $order = $this->shipment->getOrder();
+
         $address = $order->getShippingAddress();
+        $customer = $order->getCustomer();
         $length = $this->shipment->getShippingVolume() ** (1/3);
         $params = [
-            'serviciu' => $this->shippingGatewayConfig['active_service'],
-            'localitate_dest' => $this->stripDiacritics($address->getCity()),
-            'judet_dest' => $this->getProvinceCleanName(),
+            'tip_serviciu' => $this->shippingGatewayConfig['active_service'],
+            'plata_expeditie' => $this->shippingGatewayConfig['who_pays_awb'],
+            'ramburs_bani' => $order->getTotal() / 100,
+            'persoana_contact_expeditor' => $this->shippingGatewayConfig['sender_contact_person'],
+            'observatii' => $this->shippingGatewayConfig['observations'],
+            'nume_destinatar' => $address->getLastName() . ' ' . $address->getFirstName(),
+            'persoana_contact' => $address->getLastName() . ' ' . $address->getFirstName(),
+            'telefon' => $address->getPhoneNumber(),
+            'email' => $customer->getEmail(),
+            'judet' => $this->getProvinceCleanName(),
+            'strada' => $address->getStreet(),
+            'cod_postal' => str_pad($address->getPostcode(), 6 ,'0'),
             'greutate' => $this->shipment->getShippingWeight(),
-            'lungime' => $length,
-            'latime' => $length,
-            'inaltime' => $length,
-            'plata_ramburs' => $this->shippingGatewayConfig['who_pays_repayment']
+            'lungime_pachet' => $length,
+            'latime_pachet' => $length,
+            'inaltime_pachet' => $length
         ];
 
+        if ($this->shippingGatewayConfig['with_product_codes_in_content']) {
+            $params['continut'] = '';
+            foreach ($order->getItems() as $item) {
+                $newContent = $params['continut'];
+                if ($newContent) {
+                    $newContent .= ', ';
+                }
+                $newContent .= $item->getQuantity() * $item->getVariant()->getWeight().'x'.$item->getProduct()->getId();
+                if (strlen($newContent) <= 36) {
+                    $params['continut'] = $newContent;
+                } else {
+                    break;
+                }
+            }
+        }
+
+        $this->prepareSimilarParams($order, $params, self::AWB_GENERATOR);
+
+        return $params;
+    }
+
+    private function prepareSimilarParams(
+        OrderInterface $order,
+        array &$params,
+        $forWhat = self::PRICE_ESTIMATION
+    ): void {
+        switch ($forWhat) {
+            case self::PRICE_ESTIMATION:
+                $activeServiceKey = 'serviciu';
+                $cityKey = 'localitate_dest';
+                $countyKey = 'judet_dest';
+                $declaredValueKey = 'val_decl';
+                $parcelsKey = 'colete';
+                $envelopesKey = 'plicuri';
+                $lengthKey = 'lungime';
+                $widthKey = 'latime';
+                $heightKey = 'inaltime';
+                $whoPaysRepaymentKey = 'plata_ramburs';
+
+                break;
+            case self::AWB_GENERATOR:
+                $activeServiceKey = 'tip_serviciu';
+                $cityKey = 'localitate';
+                $countyKey = 'judet';
+                $parcelsKey = 'nr_colete';
+                $envelopesKey = 'nr_plicuri';
+                $declaredValueKey = 'valoare_declarata';
+                $lengthKey = 'lungime_pachet';
+                $widthKey = 'latime_pachet';
+                $heightKey = 'inaltime_pachet';
+                $whoPaysRepaymentKey = 'plata_ramburs_la';
+
+                break;
+
+            default:
+                return;
+        }
+
+        $params['greutate'] = $this->shipment->getShippingWeight();
         $nbPackages = $this->shippingGatewayConfig['number_of_packages'] ?: 1;
         if ($params['greutate'] > 1) {
-            $params['colete'] = $nbPackages;
-            $params['plicuri'] = 0;
+            $params[$parcelsKey] = $nbPackages;
+            $params[$envelopesKey] = 0;
         } elseif ($this->shippingGatewayConfig['parcels_or_envelopes']) {
-            $params['colete'] = $nbPackages;
-            $params['plicuri'] = 0;
+            $params[$parcelsKey] = $nbPackages;
+            $params[$envelopesKey] = 0;
         } else {
-            $params['plicuri'] = $nbPackages;
-            $params['colete'] = 0;
+            $params[$envelopesKey] = $nbPackages;
+            $params[$parcelsKey] = 0;
         }
 
         if ($this->shippingGatewayConfig['with_assurance']) {
-            $params['val_decl'] = $order->getTotal() / 100;
+            $params[$declaredValueKey] = $order->getTotal() / 100;
         }
 
-        return $params;
+        $params['optiuni'] = '';
+        if ($this->shippingGatewayConfig['open_allowed']) {
+            $params['optiuni'] .= 'A';
+        }
+        if ($this->shippingGatewayConfig['epod']) {
+            $params['optiuni'] .= 'X';
+        }
+
+        $address = $order->getShippingAddress();
+        $length = $this->shipment->getShippingVolume() ** (1/3);
+        $params[$activeServiceKey] = $this->shippingGatewayConfig['active_service'];
+        $params[$cityKey] = $this->cleanString($address->getCity());
+        $params[$countyKey] = $this->getProvinceCleanName();
+        $params[$lengthKey] = $length;
+        $params[$widthKey] = $length;
+        $params[$heightKey] = $length;
+        $params[$whoPaysRepaymentKey] = $this->shippingGatewayConfig['who_pays_repayment'];
+        if ($this->shippingGatewayConfig['add_shipping_cost_to_repayment']) {
+            $params[$whoPaysRepaymentKey] = Price::SENDER_ALLOWED_VALUE;
+        }
     }
 }

@@ -274,6 +274,22 @@
                 <source>infifni.sylius_fan_courier_plugin.ui.ignore_this_option</source>
                 <target>Ignoră această opțiune, a fost obligatoriu să fie adăugată cel puțin una.</target>
             </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.wrong_province_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.wrong_province_name</source>
+                <target>Judetul introdus (%county%) pentru comanda %order_number% nu este recunoscut în sistemul FAN Courier. Reglementați manual situația.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.wrong_city_name">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.wrong_city_name</source>
+                <target>Orașul introdus (%city%) pentru comanda %order_number% nu este recunoscut în sistemul FAN Courier. Reglementați manual situația.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.missing_awb">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.missing_awb</source>
+                <target>Nu a fost obținut un AWB pentru comanda %order_number%.</target>
+            </trans-unit>
+            <trans-unit id="infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.unknown_internal_error">
+                <source>infifni.sylius_fan_courier_plugin.ui.errors.awb_generation.unknown_internal_error</source>
+                <target>Eroare neanticipată ! Trebuie urmărite log-urile pentru a vedea despre ce este vorba !</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

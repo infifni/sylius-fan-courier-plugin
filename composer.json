@@ -5,6 +5,7 @@
     "description": "Infifni FAN Courier plugin for Sylius.",
     "license": "MIT",
     "require": {
+        "ext-json": "*",
         "php": "^7.3",
 
         "infifni/fan-courier-api-client": "^1.0",

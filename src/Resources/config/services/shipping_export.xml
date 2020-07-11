@@ -8,6 +8,10 @@
 
         <service id="infifni.sylius_fan_courier_plugin.event_listener.shipping_export" class="Infifni\SyliusFanCourierPlugin\EventListener\ShippingExportEventListener">
             <argument type="service" id="infifni.sylius_fan_courier_plugin.shipping.awb_generator"/>
+            <argument type="service" id="infifni.repository.shipping_awb"/>
+            <argument type="service" id="infifni.sylius_fan_courier_plugin.api.client_intermediate"/>
+            <argument type="service" id="infifni.sylius_fan_courier_plugin.shipping.cost_provider"/>
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
             <tag name="kernel.event_listener" event="bitbag.export_shipment" method="exportShipment"/>
         </service>
 
@@ -20,4 +24,5 @@
         </service>
 
     </services>
+
 </container>
